@@ -1,0 +1,132 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "rkvtestadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"DS_PARENT_SQLSERVER_DW_password": {
+			"value": ""
+		},
+		"LS_BINARY_TXT_connectionString": {
+			"value": ""
+		},
+		"LS_CSV_DATA_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_PARQUET_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_INPUT_BLOB_ADLS_connectionString": {
+			"value": ""
+		},
+		"LS_LOOKUP_MAX_VALUE_accountKey": {
+			"value": ""
+		},
+		"LS_MULTIPLE_FILES_connectionString": {
+			"value": ""
+		},
+		"LS_ONPrem_SqlServe_DW_password": {
+			"value": ""
+		},
+		"LS_OUTPUT_Binary_accountKey": {
+			"value": ""
+		},
+		"LS_REST_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_MIGRATION_password": {
+			"value": ""
+		},
+		"LS_SQL_PARQUET_password": {
+			"value": ""
+		},
+		"LS_adls_to_blob_accountKey": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"rkvtest_ADLS_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"DS_PARENT_SQLSERVER_DW_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"DS_PARENT_SQLSERVER_DW_properties_typeProperties_database": {
+			"value": "RetailDW_Dev"
+		},
+		"DS_PARENT_SQLSERVER_DW_properties_typeProperties_userName": {
+			"value": "AzurTraining"
+		},
+		"LS_CSV_DATA_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_CSV_PARQUET_OUTPUT_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_ONPrem_SqlServe_DW_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_ONPrem_SqlServe_DW_properties_typeProperties_database": {
+			"value": "RetailDW_Dev"
+		},
+		"LS_ONPrem_SqlServe_DW_properties_typeProperties_userName": {
+			"value": "Azurtraining"
+		},
+		"LS_OUTPUT_Binary_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_REST_PARQUET_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SQL_MIGRATION_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQL_MIGRATION_properties_typeProperties_database": {
+			"value": "Visionboardmigration"
+		},
+		"LS_SQL_MIGRATION_properties_typeProperties_userName": {
+			"value": "Azurtraining"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_database": {
+			"value": "RetailDW_Dev"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_userName": {
+			"value": "Azurtraining"
+		},
+		"LS_adls_to_blob_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "Visionboardmigration"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "Azurtraining"
+		},
+		"rkvtest_ADLS_properties_typeProperties_url": {
+			"value": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		}
+	}
+}

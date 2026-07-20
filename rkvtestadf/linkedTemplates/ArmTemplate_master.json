@@ -1,0 +1,349 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "rkvtestadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"DS_PARENT_SQLSERVER_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DS_PARENT_SQLSERVER_DW'"
+		},
+		"LS_BINARY_TXT_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BINARY_TXT'"
+		},
+		"LS_CSV_DATA_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_DATA'"
+		},
+		"LS_CSV_PARQUET_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET_OUTPUT'"
+		},
+		"LS_INPUT_BLOB_ADLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_INPUT_BLOB_ADLS'"
+		},
+		"LS_LOOKUP_MAX_VALUE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_LOOKUP_MAX_VALUE'"
+		},
+		"LS_MULTIPLE_FILES_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_MULTIPLE_FILES'"
+		},
+		"LS_ONPrem_SqlServe_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPrem_SqlServe_DW'"
+		},
+		"LS_OUTPUT_Binary_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_OUTPUT_Binary'"
+		},
+		"LS_REST_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_PARQUET'"
+		},
+		"LS_SQL_MIGRATION_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_MIGRATION'"
+		},
+		"LS_SQL_PARQUET_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_PARQUET'"
+		},
+		"LS_adls_to_blob_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_adls_to_blob'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"rkvtest_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'rkvtest_ADLS'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"DS_PARENT_SQLSERVER_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"DS_PARENT_SQLSERVER_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW_Dev"
+		},
+		"DS_PARENT_SQLSERVER_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "AzurTraining"
+		},
+		"LS_CSV_DATA_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_CSV_PARQUET_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_LOOKUP_MAX_VALUE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_ONPrem_SqlServe_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_ONPrem_SqlServe_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW_Dev"
+		},
+		"LS_ONPrem_SqlServe_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Azurtraining"
+		},
+		"LS_OUTPUT_Binary_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_REST_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SQL_MIGRATION_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQL_MIGRATION_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Visionboardmigration"
+		},
+		"LS_SQL_MIGRATION_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Azurtraining"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW_Dev"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Azurtraining"
+		},
+		"LS_adls_to_blob_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Visionboardmigration"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Azurtraining"
+		},
+		"rkvtest_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rkvteststorageaccount.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "rkvtestadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"LS_BINARY_TXT_connectionString": {
+						"value": "[parameters('LS_BINARY_TXT_connectionString')]"
+					},
+					"LS_CSV_DATA_accountKey": {
+						"value": "[parameters('LS_CSV_DATA_accountKey')]"
+					},
+					"LS_CSV_PARQUET_OUTPUT_accountKey": {
+						"value": "[parameters('LS_CSV_PARQUET_OUTPUT_accountKey')]"
+					},
+					"LS_INPUT_BLOB_ADLS_connectionString": {
+						"value": "[parameters('LS_INPUT_BLOB_ADLS_connectionString')]"
+					},
+					"LS_MULTIPLE_FILES_connectionString": {
+						"value": "[parameters('LS_MULTIPLE_FILES_connectionString')]"
+					},
+					"LS_OUTPUT_Binary_accountKey": {
+						"value": "[parameters('LS_OUTPUT_Binary_accountKey')]"
+					},
+					"LS_REST_PARQUET_accountKey": {
+						"value": "[parameters('LS_REST_PARQUET_accountKey')]"
+					},
+					"LS_adls_to_blob_accountKey": {
+						"value": "[parameters('LS_adls_to_blob_accountKey')]"
+					},
+					"rkvtest_ADLS_accountKey": {
+						"value": "[parameters('rkvtest_ADLS_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_CSV_DATA_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_DATA_properties_typeProperties_url')]"
+					},
+					"LS_CSV_PARQUET_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_PARQUET_OUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_OUTPUT_Binary_properties_typeProperties_url": {
+						"value": "[parameters('LS_OUTPUT_Binary_properties_typeProperties_url')]"
+					},
+					"LS_REST_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_RestResource_properties_typeProperties_url": {
+						"value": "[parameters('LS_RestResource_properties_typeProperties_url')]"
+					},
+					"LS_adls_to_blob_properties_typeProperties_url": {
+						"value": "[parameters('LS_adls_to_blob_properties_typeProperties_url')]"
+					},
+					"rkvtest_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('rkvtest_ADLS_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "rkvtestadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"DS_PARENT_SQLSERVER_DW_password": {
+						"value": "[parameters('DS_PARENT_SQLSERVER_DW_password')]"
+					},
+					"LS_LOOKUP_MAX_VALUE_accountKey": {
+						"value": "[parameters('LS_LOOKUP_MAX_VALUE_accountKey')]"
+					},
+					"LS_ONPrem_SqlServe_DW_password": {
+						"value": "[parameters('LS_ONPrem_SqlServe_DW_password')]"
+					},
+					"LS_SQL_MIGRATION_password": {
+						"value": "[parameters('LS_SQL_MIGRATION_password')]"
+					},
+					"LS_SQL_PARQUET_password": {
+						"value": "[parameters('LS_SQL_PARQUET_password')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"DS_PARENT_SQLSERVER_DW_properties_typeProperties_server": {
+						"value": "[parameters('DS_PARENT_SQLSERVER_DW_properties_typeProperties_server')]"
+					},
+					"DS_PARENT_SQLSERVER_DW_properties_typeProperties_database": {
+						"value": "[parameters('DS_PARENT_SQLSERVER_DW_properties_typeProperties_database')]"
+					},
+					"DS_PARENT_SQLSERVER_DW_properties_typeProperties_userName": {
+						"value": "[parameters('DS_PARENT_SQLSERVER_DW_properties_typeProperties_userName')]"
+					},
+					"LS_LOOKUP_MAX_VALUE_properties_typeProperties_url": {
+						"value": "[parameters('LS_LOOKUP_MAX_VALUE_properties_typeProperties_url')]"
+					},
+					"LS_ONPrem_SqlServe_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_ONPrem_SqlServe_DW_properties_typeProperties_server')]"
+					},
+					"LS_ONPrem_SqlServe_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_ONPrem_SqlServe_DW_properties_typeProperties_database')]"
+					},
+					"LS_ONPrem_SqlServe_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ONPrem_SqlServe_DW_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_MIGRATION_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_MIGRATION_properties_typeProperties_server')]"
+					},
+					"LS_SQL_MIGRATION_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_MIGRATION_properties_typeProperties_database')]"
+					},
+					"LS_SQL_MIGRATION_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_MIGRATION_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_PARQUET_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_server')]"
+					},
+					"LS_SQL_PARQUET_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_database')]"
+					},
+					"LS_SQL_PARQUET_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_userName')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'rkvtestadf_ArmTemplate_0')]"
+			]
+		}
+	]
+}
