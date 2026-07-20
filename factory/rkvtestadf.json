@@ -1,0 +1,15 @@
+{
+	"name": "rkvtestadf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8d49fe3f-209d-4d5a-9a7e-df1c30208c10",
+		"tenantId": "28e08d79-4228-49b5-85ac-02041ae07636"
+	}
+}

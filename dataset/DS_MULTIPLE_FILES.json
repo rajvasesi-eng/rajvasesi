@@ -1,0 +1,23 @@
+{
+	"name": "DS_MULTIPLE_FILES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MULTIPLE_FILES",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "outputmultiplefile"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
